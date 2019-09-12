@@ -1,8 +1,6 @@
 <?php
     $dir = dirname(__FILE__);
-
     $filePath = scandir($dir);
-
     foreach($filePath as $path) {
         $file = ltrim($path,'.');
         chdir($dir);
@@ -22,14 +20,13 @@
             }//end if
         }//end if
     }//end foreach
-
+    
     function findFile(array $directory, string $needle) {
         foreach ($directory as $dir) {
             $index = false;
             if (strstr($dir, $needle)) {
                 $index = true;
             }//end if
-
         }//end foreach
         return $index;
     }
