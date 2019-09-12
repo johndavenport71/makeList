@@ -8,10 +8,10 @@ The file should be placed at the root of your site and will make all folders tha
 ROOT  
 |  
 |------Subfolder1  
-|+:  |------page2.php  
-|+:  |------index.php  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|------page2.php  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|------index.php  
 |-----Subfolder2  
-|   +|------page1.php  
-|   +|------page2.php  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|------page1.php  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|------page2.php  
 |-----index.php  
 |-----mkList.php  
