@@ -5,18 +5,6 @@ It also checks for an index file and if one is not found it looks for the first 
 The file should be placed at the root of your site and will make all folders that contain web files into a list of links.
 
 ## Example File Structure
-<<<<<<< HEAD
-ROOT
-|
-|------Subfolder1
-|       |------page2.php
-|       |------index.php
-|-----Subfolder2
-|       |------page1.php
-|       |------page2.php
-|-----index.php
-|-----mkList.php
-=======
 ROOT  
 |  
 |------Subfolder1  
@@ -27,4 +15,3 @@ ROOT
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|------page2.php  
 |-----index.php  
 |-----mkList.php  
->>>>>>> refact
