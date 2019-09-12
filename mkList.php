@@ -2,7 +2,7 @@
     $dir = dirname(__FILE__);
 
     $filePath = scandir($dir);
-    print_r($filePath);
+    //print_r($filePath);
     foreach($filePath as $path) {
         $file = ltrim($path,'.');
         chdir($dir);
