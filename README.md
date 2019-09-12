@@ -5,13 +5,13 @@ It also checks for an index file and if one is not found it looks for the first 
 The file should be placed at the root of your site and will make all folders into a list. Changes need to be made so that it excludes image or script folders.
 
 ## Example File Structure
-ROOT  
-|  
-|------Subfolder1  
-|       |------page2.php  
-|       |------index.php  
-|-----Subfolder2  
-|       |------page1.php  
-|       |------page2.php  
-|-----index.php  
-|-----mkList.php  
+ROOT
+|
+|------Subfolder1
+|       |------page2.php
+|       |------index.php
+|-----Subfolder2
+|       |------page1.php
+|       |------page2.php
+|-----index.php
+|-----mkList.php
