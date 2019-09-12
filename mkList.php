@@ -2,7 +2,7 @@
     $dir = dirname(__FILE__);
 
     $filePath = scandir($dir);
-
+    print_r($filePath);
     foreach($filePath as $path) {
         $file = ltrim($path,'.');
         chdir($dir);
@@ -17,11 +17,13 @@
                         break;
                     }
                 }
+                unset($current);
             } else {
                 print('<li><a href="' . $file . '">' . $file . '</a></li>');
             }//end if
         }//end if
     }//end foreach
+    unset($path);
 
     function findFile(array $directory, string $needle) {
         foreach ($directory as $dir) {
