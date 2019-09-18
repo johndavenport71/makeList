@@ -84,6 +84,7 @@
     }//end makeIndex function
 
     function isIgnored(string $check) {
+        //array of folders to ignore
         $ignore = [
             '.git',
             'exam1',
