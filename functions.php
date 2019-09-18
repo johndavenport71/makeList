@@ -1,5 +1,6 @@
 <?php
 
+function makeList() {
     //store the current directory as root to be returned to later
     $root = getcwd();
 
@@ -20,14 +21,18 @@
             //search for an index file
             if (!findFile($currentFiles, 'index.')) {
                 //if there is no index file, look for any php or html file and link to that
+                makeIndex();
+                $index = fopen('index.html', 'a');
+                fwrite($index, '<ul>');
                 foreach ($currentFiles as $current) {
-                    if(strstr($current, '.php') || strstr($current, '.html')) {
-                        print('<li><a href="' . $file . '/' . $current . '">' . $file . '</a></li>');
-                        break;
+                    if(strstr($current, '.php') || strstr($current, '.htm')) {
+                        fwrite($index, '<li><a href="' . $file . '/' . $current . '">' . $current . '</a></li>' . PHP_EOL);
                     }
 
                 }//end foreach
-
+                fwrite($index, '</ul>'.PHP_EOL.'</body>'.PHP_EOL.'</html>');
+                fclose($index);
+                print('<li><a href="' . $file . '">' . $file . '</a></li>');
             } else {
                 //create a link to the current folder
                 print('<li><a href="' . $file . '">' . $file . '</a></li>');
@@ -38,7 +43,7 @@
 
     }//end foreach
     
-    
+}
     
     //this function searches and array for a string and returns a boolean
     //based on if the string was matched or not
@@ -58,5 +63,22 @@
     }
 
     function makeIndex() {
-        
+        $index = fopen('index.html', 'w');
+        $i = 0;
+        $arrIndex = [
+            "<!DOCTYPE html>",
+            "<html lang='en'>",
+            "<head>",
+            "<meta charset='UTF-8'>",
+            "<title>index</title>",
+            "</head>",
+            "<body>"
+        ];
+        while(!feof($index) && $i < sizeof($arrIndex)) {
+            fwrite($index, $arrIndex[$i] . PHP_EOL);
+            $i++;
+        }
+        fclose($index);
     }
+
+    
