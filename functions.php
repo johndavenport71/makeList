@@ -12,10 +12,10 @@
             chdir($root);
             
             //check for a . in the file name
-            if (!strstr($file, '.')) {
+            if (isIgnored($file)) {
                 //move into the folder
                 chdir($file);
-
+                
                 $currentFiles = getFiles();
 
                 //search for an index file
@@ -62,6 +62,8 @@
         return array_diff(scandir(getcwd()), array(".",".."));
     }
 
+    //creates and writes a new index.html file
+    //***note*** Does not include closing body and html tags
     function makeIndex() {
         $index = fopen('index.html', 'w');
         $i = 0;
@@ -80,3 +82,22 @@
         }
         fclose($index);
     }//end makeIndex function
+
+    function isIgnored(string $check) {
+        $ignore = [
+            '.git',
+            'exam1',
+            'exam2',
+            'exam3',
+            'project'
+        ];
+        if(is_dir($check)) {
+            if(in_array($check, $ignore)) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
